@@ -1,11 +1,13 @@
 import Layout from "@/components/layout";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 export default function Products() {
+  const [products, setProducts] = useState([]);
   useEffect(() => {
     axios.get("/api/products").then((response) => {
-      console.log(response.data);
+      setProducts(response.data);
+      console.log(products);
     });
   }, []);
   return (
@@ -16,6 +18,30 @@ export default function Products() {
       >
         Add new product
       </Link>
+      <table className="basic">
+        <thead>
+            <tr>
+                <td>Product name</td>
+                <td>Description</td>
+                <td>Price</td>
+            </tr>
+        </thead>
+        <tbody>
+            {products.map((product) => {
+                 return(
+                    <tr>
+                        <td>{product.title}</td>
+                        <td>
+                            <button>
+                                {product.description}
+                            </button>
+                        </td>
+                        <td>&#8377;&nbsp;{product.price}&nbsp;&nbsp;</td>
+                    </tr>
+                 )
+            })}
+        </tbody>
+      </table>
     </Layout>
   );
 }
