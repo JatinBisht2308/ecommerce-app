@@ -1,12 +1,14 @@
 import Layout from "@/components/layout";
 import { useState } from "react";
 import {redirect} from 'next/navigation';
+import { useRouter } from "next/router";
 import axios from "axios";
 export default function NewProduct() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [goToProducts,setGoToProducts] = useState(false);
+  const router = useRouter();
   async function createProduct(ev) {
     // this will prevent the browser from reloading the page when the product is created and updated with the new information in the database
     ev.preventDefault();
@@ -19,9 +21,9 @@ export default function NewProduct() {
     // when we create a new product then we need to come back to the add new product page.
     setGoToProducts(true);
   }
-    // if(goToProducts){
-    //     return redirect('/products');
-    // }
+    if(goToProducts){
+         router.push('/products');
+    }
   return (
     <Layout>
       <form onSubmit={createProduct}>
