@@ -7,7 +7,6 @@ export default function editProductPage() {
   const router = useRouter();
   const [product, setProduct] = useState(null);
   const { productId } = router.query;
-  console.log("asdfasdfasdf", productId);
   useEffect(() => {
     if (!productId) return;
     axios.get("/api/products?productId=" + productId).then((response) => {
