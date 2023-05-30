@@ -1,9 +1,13 @@
-import Layout from "../components/layout";
+import Layout from "@/components/layout";
 import { useSession } from "next-auth/react";
 export default function Home() {
   const { data: session } = useSession();
   console.log(session);
-  if (!session) return;
+  // if (!session) return(
+  //   <div>
+  //     there is error in getting the session.
+  //   </div>
+  // );
   return (
     <Layout>
       <div className="text-blue-900 flex w-100 justify-between">

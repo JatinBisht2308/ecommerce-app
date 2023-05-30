@@ -2,26 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-input,textarea{
-    @apply border-2 border-gray-300 rounded-md px-1 w-full;
-    @apply mb-2;
-} 
+input,
+textarea {
+  @apply border-2 border-gray-300 rounded-md px-1 w-full;
+  @apply mb-2;
+}
 
-input:focus,textarea:focus{
-    @apply border-blue-900;
+input:focus,
+textarea:focus {
+  @apply border-blue-900;
 }
-h1{
-    @apply text-blue-900 mb-2 text-xl font-semibold;
+h1 {
+  @apply text-blue-900 mb-2 text-xl font-semibold;
 }
-label{
-    @apply font-medium text-blue-900;
+label {
+  @apply font-medium text-blue-900;
 }
-.btn-primary{
-    @apply bg-blue-900 text-white px-4 py-1 rounded-md;
+.btn-primary {
+  @apply bg-blue-900 text-white px-4 py-1 rounded-md;
 }
-table.basic{
-    @apply w-full mt-5;
+table.basic {
+  @apply w-full mt-5;
 }
-table.basic tr td{
-  @apply border;
+table.basic tr td {
+  @apply border border-blue-300 p-1;
+}
+table.basic thead tr td {
+  @apply bg-blue-100;
+}
+table.basic a {
+  @apply text-white bg-blue-900 px-2 py-1 rounded-lg flex items-center justify-center gap-1;
+}
+table.basic .column-heading {
+  @apply font-bold text-blue-900;
 }
