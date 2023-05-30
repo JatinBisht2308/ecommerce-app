@@ -5,19 +5,20 @@ import ProductForm from "@/components/ProductForm";
 import axios from "axios";
 export default function editProductPage() {
   const router = useRouter();
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState(null);
   const { productId } = router.query;
   console.log("asdfasdfasdf", productId);
   useEffect(() => {
-    if(!productId) return;
-    axios.get('/api/products?productId=' + productId).then((response) => {
+    if (!productId) return;
+    axios.get("/api/products?productId=" + productId).then((response) => {
       console.log(response.data);
       setProduct(response.data);
     });
   }, [productId]);
   return (
     <Layout>
-     <ProductForm pageTitle={"Edit Product"} productInfo={product} />
+      <h1>Edit product</h1>
+      {product && <ProductForm {...product} />}
     </Layout>
   );
 }

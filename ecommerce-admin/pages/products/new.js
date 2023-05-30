@@ -3,7 +3,8 @@ import ProductForm from "@/components/ProductForm";
 export default function NewProduct() {
   return (
     <Layout>
-      <ProductForm pageTitle={"New Product"}/>
+      <h1>New product</h1>
+      <ProductForm />
     </Layout>
   );
 }
