@@ -28,7 +28,7 @@ export default function Nav() {
         <span className="">Ecommerce&nbsp;Admin</span>
       </Link>
       <nav className="flex flex-col gap-2">
-        <Link href={"./"} className={pathname==='/' ?activeLinkClasses: inactiveLinkClasses}>
+        <Link href={"/"} className={pathname==='/' ?activeLinkClasses: inactiveLinkClasses}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -45,7 +45,7 @@ export default function Nav() {
           </svg>
           Dashboard
         </Link>
-        <Link href={"./products"} className={pathname.includes('/products') ?activeLinkClasses: inactiveLinkClasses}>
+        <Link href={"/products"} className={pathname.includes('/products') ?activeLinkClasses: inactiveLinkClasses}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -62,7 +62,7 @@ export default function Nav() {
           </svg>
           Products
         </Link>
-        <Link href={"./orders"} className={pathname.includes('/orders') ?activeLinkClasses: inactiveLinkClasses}>
+        <Link href={"/orders"} className={pathname.includes('/orders') ?activeLinkClasses: inactiveLinkClasses}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -79,7 +79,7 @@ export default function Nav() {
           </svg>
           Orders
         </Link>
-        <Link href={"./settings"} className={pathname.includes('/settings') ?activeLinkClasses: inactiveLinkClasses}>
+        <Link href={"/settings"} className={pathname.includes('/settings') ?activeLinkClasses: inactiveLinkClasses}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

@@ -13,7 +13,6 @@ export default function ProductForm({
   const [goToProducts, setGoToProducts] = useState(false);
   const router = useRouter();
 
-  console.log("kuch ariya ha", title + " " + description + " " + price);
   async function saveProduct(ev) {
     // this will prevent the browser from reloading the page when the product is created and updated with the new information in the database
     ev.preventDefault();
